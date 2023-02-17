@@ -80,7 +80,7 @@ class TriangleTest {
     }
 
     @Test
-    void shouldGetTypeOFATriangleWithSidesFiveSixAndSevenReturnScalene(){
+    void shouldGetTypeOfATriangleWithSidesFiveSixAndSevenReturnScalene(){
         Triangle.TriangleType expected = Triangle.TriangleType.SCALENE;
         Triangle.TriangleType result1 = triangle.getType(5,6,7);
         Triangle.TriangleType result2 = triangle.getType(5,7,6);
@@ -88,6 +88,23 @@ class TriangleTest {
         Triangle.TriangleType result4 = triangle.getType(6,7,5);
         Triangle.TriangleType result5 = triangle.getType(7,5,6);
         Triangle.TriangleType result6 = triangle.getType(7,6,5);
+        assertEquals(expected, result1);
+        assertEquals(expected, result2);
+        assertEquals(expected, result3);
+        assertEquals(expected, result4);
+        assertEquals(expected, result5);
+        assertEquals(expected, result6);
+    }
+
+    @Test
+    void shouldGetTypeOfATriangleWithSidesTwoThreeAndOnePointFiveReturnScalene(){
+        Triangle.TriangleType expected = Triangle.TriangleType.SCALENE;
+        Triangle.TriangleType result1 = triangle.getType(1.5,   2,      3);
+        Triangle.TriangleType result2 = triangle.getType(1.5,   3,      2);
+        Triangle.TriangleType result3 = triangle.getType(2,   1.5,      3);
+        Triangle.TriangleType result4 = triangle.getType(2,     3,    1.5);
+        Triangle.TriangleType result5 = triangle.getType(3   ,1.5,      2);
+        Triangle.TriangleType result6 = triangle.getType(3,     2,    1.5);
         assertEquals(expected, result1);
         assertEquals(expected, result2);
         assertEquals(expected, result3);
