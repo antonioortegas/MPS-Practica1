@@ -8,7 +8,7 @@ import java.util.List;
  * Class providing a getType() method that, given the length of the sides of a triangle,
  * returns its type: equilateral, isosceles, or scalene
  *
- * @author Antonio J. Nebro
+ * @author Antonio Ortega
  */
 public class Triangle {
 
