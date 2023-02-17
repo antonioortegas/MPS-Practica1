@@ -31,7 +31,7 @@ class TriangleTest {
     }
 
     @Test
-    void shouldGetTypeOfATriangleWithAtLeastOneNegativeSideLenghtRiseAnException(){
+    void shouldGetTypeOfATriangleWithAtLeastOneNegativeSideLengthRiseAnException(){
         assertThrows(RuntimeException.class,()->triangle.getType(-1,-1,-1));
         assertThrows(RuntimeException.class,()->triangle.getType(-1,-1,1));
         assertThrows(RuntimeException.class,()->triangle.getType(-1,1,-1));
@@ -40,4 +40,26 @@ class TriangleTest {
         assertThrows(RuntimeException.class,()->triangle.getType(1,-1,1));
         assertThrows(RuntimeException.class,()->triangle.getType(1,1,-1));
     }
+
+    @Test
+    void shouldGetTypeOfATriangleWhereTheSumOfTwoSidesEqualsTheThirdRiseAnException(){
+        assertThrows(RuntimeException.class, ()-> triangle.getType(1,2,3));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(1,3,2));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(2,1,3));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(2,3,1));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(3,1,2));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(3,2,1));
+    }
+
+    @Test
+    void shouldGetTypeOfATriangleWhereTheSumOfTwoSidesIsLessThanTheThirdRiseAnException(){
+        assertThrows(RuntimeException.class, ()-> triangle.getType(1,2,4));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(1,4,2));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(2,1,4));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(2,4,1));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(4,1,2));
+        assertThrows(RuntimeException.class, ()-> triangle.getType(4,2,1));
+    }
+
+
 }
