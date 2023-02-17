@@ -61,5 +61,38 @@ class TriangleTest {
         assertThrows(RuntimeException.class, ()-> triangle.getType(4,2,1));
     }
 
+    @Test
+    void shouldGetTypeOFATriangleWhereAllSidesAre5ReturnEquilateral(){
+        Triangle.TriangleType expected = Triangle.TriangleType.EQUILATERAL;
+        Triangle.TriangleType result = triangle.getType(5,5,5);
+        assertEquals(expected, result);
+    }
 
+    @Test
+    void shouldGetTypeOFATriangleWhereTwoSidesAre10AndTheThirdIs5ReturnIsosceles(){
+        Triangle.TriangleType expected = Triangle.TriangleType.ISOSCELES;
+        Triangle.TriangleType result1 = triangle.getType(5,10,10);
+        Triangle.TriangleType result2 = triangle.getType(10,5,10);
+        Triangle.TriangleType result3 = triangle.getType(10,10,5);
+        assertEquals(expected, result1);
+        assertEquals(expected, result2);
+        assertEquals(expected, result3);
+    }
+
+    @Test
+    void shouldGetTypeOFATriangleWithSidesFiveSixAndSevenReturnScalene(){
+        Triangle.TriangleType expected = Triangle.TriangleType.SCALENE;
+        Triangle.TriangleType result1 = triangle.getType(5,6,7);
+        Triangle.TriangleType result2 = triangle.getType(5,7,6);
+        Triangle.TriangleType result3 = triangle.getType(6,5,7);
+        Triangle.TriangleType result4 = triangle.getType(6,7,5);
+        Triangle.TriangleType result5 = triangle.getType(7,5,6);
+        Triangle.TriangleType result6 = triangle.getType(7,6,5);
+        assertEquals(expected, result1);
+        assertEquals(expected, result2);
+        assertEquals(expected, result3);
+        assertEquals(expected, result4);
+        assertEquals(expected, result5);
+        assertEquals(expected, result6);
+    }
 }
