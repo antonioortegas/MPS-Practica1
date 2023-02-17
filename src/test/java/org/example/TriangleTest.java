@@ -5,7 +5,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+/*
+    ===================================================
 
+    TEST CASES
+    1.Type of triangle with at least one side of length 0 should rise an exception
+    2.Type of triangle with at least one side of negative length should rise an exception
+    3.Type of triangle where the sum of the first two sides equals the third rises and exception
+    4.Type of triangle where the sum of the first two sides is less than the third rises and exception
+    5.Type of triangle where all side lengths are 5 is equilateral
+    6.Type of triangle where two side lengths are 10 and the third is 5 is isosceles
+    7.Type of triangle where lengths are 5, 6 and 7 is scalene
+    8.Type of triangle method should accept non-integer values (doubles)
+
+    ===================================================
+ */
 class TriangleTest {
     Triangle triangle;
 
